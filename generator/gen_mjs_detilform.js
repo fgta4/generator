@@ -198,11 +198,18 @@ module.exports = async (fsd, genconfig) => {
 
 
 			// handler
+			var slideselect_on_selecting_handler = '';
 			var slideselect_on_selected_handler = '';
 			var slideselect_on_dataloading_handler = '';
 			var slideselect_on_dataloaded_handler = '';
 			
 			if (genconfig.schema.editorHandler != undefined) {
+
+				slideselect_on_selecting_handler = `if (typeof hnd!=='undefined') {  
+					if (typeof hnd.${prefix}${fieldname}_selecting === 'function') {
+						hnd.${prefix}${fieldname}_selecting(value, display, record, args);
+					}
+				}`;
 
 				slideselect_on_selected_handler = `if (typeof hnd!=='undefined') {  
 					if (typeof hnd.${prefix}${fieldname}_selected === 'function') {

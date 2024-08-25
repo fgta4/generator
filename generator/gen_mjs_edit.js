@@ -233,7 +233,7 @@ module.exports = async (fsd, genconfig) => {
 				
 				if (genconfig.schema.editorHandler != undefined) {
 
-					slideselect_on_selecting_handler = `if (typeof hnd.${prefix}${fieldname}_selected === 'function') {
+					slideselect_on_selecting_handler = `if (typeof hnd.${prefix}${fieldname}_selecting === 'function') {
 					hnd.${prefix}${fieldname}_selecting(value, display, record, args);
 				}`;
 
