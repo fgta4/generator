@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+echo "Building FGTA program $1"
+
+node genapp.js $1
+
+
